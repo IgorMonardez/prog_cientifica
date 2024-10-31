@@ -1,12 +1,11 @@
-from Função import funcao
+from core.Funcao import funcao
 
 
 def runge_kutta(expressao, w, t_inicial, t_final, divisao):
     h = (t_final - t_inicial) / divisao
     i = 1
     while t_inicial <= t_final:
-        print("t: " + str(t_inicial) + "\n")
-
+        print(f"Iteração {i}")
         k1 = h * funcao(expressao, {'t': t_inicial, 'w': w})
         k2 = h * funcao(expressao, {'t': t_inicial + h / 2, 'w': w + k1 / 2})
         k3 = h * funcao(expressao, {'t': t_inicial + h / 2, 'w': w + k2 / 2})
@@ -16,9 +15,10 @@ def runge_kutta(expressao, w, t_inicial, t_final, divisao):
         print(f"k2: {k2}")
         print(f"k3: {k3}")
         print(f"k4: {k4}")
-        print(f"w{i}: {w}\n\n")
+        print(f"w{i}: {w}")
         i += 1
         t_inicial += h
+        print()
 
-
-runge_kutta('1 + (t-w)**2', 1, 2, 3, 2)
+if __name__ == "__main__":
+    print(runge_kutta('1 + (t-w)**2', 1, 2, 3, 2))
