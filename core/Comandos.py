@@ -1,5 +1,5 @@
 import sys
-from metodos.Runge_Kutta import runge_kutta
+from metodos.Runge_Kutta import runge_kutta_4_ordem
 
 # Dicionário para armazenar os comandos disponíveis
 comandos = {}
@@ -50,5 +50,5 @@ def command_runge_kutta():
     divisao = int(input(">> divisao = "))
     
     print("\nResultado:\n")
-    runge_kutta(expressao, w, t_inicial, t_final, divisao)  
+    runge_kutta_4_ordem(expressao, w, t_inicial, t_final, divisao)
    

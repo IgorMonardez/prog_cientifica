@@ -1,7 +1,7 @@
 from core.Funcao import funcao
 
 
-def runge_kutta(expressao, w, t_inicial, t_final, divisao):
+def runge_kutta_4_ordem(expressao, w, t_inicial, t_final, divisao):
     h = (t_final - t_inicial) / divisao
     i = 1
     while t_inicial <= t_final:
@@ -21,4 +21,4 @@ def runge_kutta(expressao, w, t_inicial, t_final, divisao):
         print()
 
 if __name__ == "__main__":
-    print(runge_kutta('1 + (t-w)**2', 1, 2, 3, 2))
+    print(runge_kutta_4_ordem('1 + (t-w)**2', 1, 2, 3, 2))
